@@ -3,10 +3,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useCart } from "../context/CartContext";
+import Link from "next/link";   // ⭐ IMPORT LINK
 
 export default function CartPage() {
   const { cart, increaseQty, decreaseQty, removeFromCart } = useCart();
-//fefe
+
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
@@ -71,6 +72,13 @@ export default function CartPage() {
                 Subtotal: ₹{subtotal}
               </h3>
             </div>
+
+            {/* ⭐ Proceed to Checkout Button */}
+            <Link href="/checkout">
+              <button className="mt-6 w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700">
+                Proceed to Checkout
+              </button>
+            </Link>
           </div>
         )}
       </section>

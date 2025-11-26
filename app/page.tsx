@@ -1,6 +1,28 @@
+import ProductCard from "./components/ProductCard";
+
+
+const sampleProducts = [
+  {
+    title: "Premium Brake Pads",
+    price: 2499,
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+  },
+  {
+    title: "High-Performance Engine Oil",
+    price: 1199,
+    image: "https://images.unsplash.com/photo-1581091215367-59ab6b3e7bd2"
+  },
+  {
+    title: "LED Headlight Bulb",
+    price: 899,
+    image: "https://images.unsplash.com/photo-1601924638867-3ec2f8f7e603"
+  }
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
+
       {/* Header */}
       <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
@@ -34,13 +56,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products placeholder */}
+      {/* Featured Products Section */}
       <section className="max-w-6xl mx-auto px-6 py-12">
-        <h3 className="text-2xl font-bold mb-4">Featured Products</h3>
-        <p className="text-gray-600">
-          Product listings will appear here soon.
-        </p>
+        <h3 className="text-2xl font-bold mb-6">Featured Products</h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {sampleProducts.map((p, index) => (
+            <ProductCard
+              key={index}
+              title={p.title}
+              price={p.price}
+              image={p.image}
+            />
+          ))}
+        </div>
       </section>
+
     </main>
   );
 }

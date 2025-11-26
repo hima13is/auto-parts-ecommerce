@@ -1,5 +1,6 @@
 import ProductCard from "./components/ProductCard";
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const sampleProducts = [
   {
@@ -23,22 +24,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
 
-      {/* Header */}
-      <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-        <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
-          <h1 className="text-2xl font-bold text-blue-600">AutoParts</h1>
-
-          <nav className="hidden md:flex gap-6 text-gray-600">
-            <a href="#" className="hover:text-blue-600">Home</a>
-            <a href="#" className="hover:text-blue-600">Products</a>
-            <a href="#" className="hover:text-blue-600">Contact</a>
-          </nav>
-
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
-            Cart (0)
-          </button>
-        </div>
-      </header>
+      {/* Header Component */}
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
@@ -71,6 +58,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Footer Component */}
+      <Footer />
 
     </main>
   );
